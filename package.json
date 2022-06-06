@@ -2,9 +2,9 @@
   "name": "api",
   "version": "1.0.0",
   "description": "",
-  "main": "src/server.ts",
+  "main": "api/index.ts",
   "scripts": {
-    "start": "ts-node-dev --respawn --transpile-only src/server.ts"
+    "start": "ts-node-dev --respawn --transpile-only api/index.ts"
   },
   "author": {
     "name": "João Vitor",
