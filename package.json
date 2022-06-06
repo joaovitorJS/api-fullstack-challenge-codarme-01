@@ -4,7 +4,7 @@
   "description": "",
   "main": "api/index.ts",
   "scripts": {
-    "start": "ts-node-dev --respawn --transpile-only api/index.ts"
+    "start": "node api/index.ts"
   },
   "author": {
     "name": "João Vitor",
