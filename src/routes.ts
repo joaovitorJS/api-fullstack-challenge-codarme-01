@@ -30,8 +30,23 @@ router.get('/tweets', async (ctx) => {
 
   try {
     jwt.verify(token, process.env.JWT_SECRET || '');
-    const tweets = await prisma.tweet.findMany();
-    ctx.body = tweets;
+    const tweets = await prisma.tweet.findMany({
+      include: {
+        user: true
+      }
+    });
+
+    const responseTweets = tweets.map(tweet => {
+      return {
+        id: tweet.id,
+        text: tweet.text,
+        user: {
+          name: tweet.user.name,
+          username: tweet.user.username,
+        }
+      }
+    })
+    ctx.body = responseTweets;
   } catch (error) {
     ctx.status = 401;
     return;
