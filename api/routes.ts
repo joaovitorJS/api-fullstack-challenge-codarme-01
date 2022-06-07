@@ -115,7 +115,6 @@ router.post('/signup', async (ctx) => {
     ctx.body = userResponse;
 
   } catch (error: any) {
-    console.log(error.meta.target);
     if (error.meta) {
       if ((error.meta?.target.indexOf('email') > -1)) {
         ctx.body = "Email de usuário já existente";

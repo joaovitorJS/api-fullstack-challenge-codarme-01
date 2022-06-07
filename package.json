@@ -4,7 +4,7 @@
   "description": "",
   "main": "api/index.ts",
   "scripts": {
-    "start": "node api/index.ts"
+    "start": "ts-node-dev api/index.ts"
   },
   "author": {
     "name": "João Vitor",
